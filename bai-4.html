@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex-4</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300" style="border: 1px solid black"></canvas>
+
+</body>
+</html>
+<script>
+    // class Circle
+    let ctx = document.getElementById("myCanvas").getContext('2d');
+    class Circle{
+        x;
+        y;
+        radius;
+        color;
+
+        constructor(x,y,radius,color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+
+        render(){
+            ctx.beginPath();
+            ctx.arc(this.x,this.y,this.radius,0,2*Math.PI);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+
+    // draw Circle by method render
+        let circle = new Circle(10,10,100,'#000000');
+        circle.render();
+
+
+</script>
